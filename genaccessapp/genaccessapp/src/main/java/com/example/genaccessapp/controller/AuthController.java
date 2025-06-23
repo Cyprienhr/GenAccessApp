@@ -41,11 +41,7 @@ public class AuthController {
         return ResponseEntity.ok(response);
     }
     
-    /**
-     * Endpoint for user logout
-     * @param request The HTTP request containing the JWT token in the Authorization header
-     * @return A message indicating success or failure
-     */
+   
     @PostMapping("/logout")
     public ResponseEntity<?> logoutUser(HttpServletRequest request) {
         String jwt = request.getHeader("Authorization");

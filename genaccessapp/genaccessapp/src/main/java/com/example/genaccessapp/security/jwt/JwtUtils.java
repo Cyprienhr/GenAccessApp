@@ -72,10 +72,9 @@ public class JwtUtils {
         return false;
     }
     
-    /**
-     * Invalidate a JWT token by adding it to the blacklist
-     * @param token The token to invalidate
-     */
+    
+    //  Invalidate a JWT token by adding it to the blacklist
+     
     public void invalidateToken(String token) {
         try {
             // Get token expiration date
@@ -93,18 +92,17 @@ public class JwtUtils {
         }
     }
     
-    /**
-     * Check if a token is blacklisted
-     * @param token The token to check
-     * @return true if blacklisted, false otherwise
-     */
+    
+    //  Check if a token is blacklisted
+    //  param token The token to check
+    //  return true if blacklisted, false otherwise
+     
     public boolean isTokenBlacklisted(String token) {
         return blacklistedTokens.containsKey(token);
     }
     
-    /**
-     * Clean up expired tokens from the blacklist
-     */
+    
+    //  Clean up expired tokens from the blacklist
     private void cleanupBlacklist() {
         Date now = new Date();
         blacklistedTokens.entrySet().removeIf(entry -> entry.getValue().before(now));

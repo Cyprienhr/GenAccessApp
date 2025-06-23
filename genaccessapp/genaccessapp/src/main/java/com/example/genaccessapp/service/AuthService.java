@@ -122,11 +122,7 @@ public class AuthService {
         return new MessageResponse("User registered successfully!");
     }
     
-    /**
-     * Logout a user by invalidating their JWT token
-     * @param token The JWT token to invalidate
-     * @return A message response indicating success or failure
-     */
+    
     public MessageResponse logoutUser(String token) {
         try {
             // Remove the "Bearer " prefix if present

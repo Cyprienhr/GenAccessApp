@@ -185,6 +185,6 @@ public class RoleService {
     private boolean isSuperAdmin() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         return authentication.getAuthorities().stream()
-                .anyMatch(authority -> authority.getAuthority().equals("SUPER_ADMIN"));
+                .anyMatch(authority -> authority.getAuthority().equals("ROLE_SUPER_ADMIN"));
     }
 }

@@ -40,18 +40,12 @@ public class DataInitializer implements CommandLineRunner {
     @Override
     @Transactional
     public void run(String... args) throws Exception {
-        // Initialize default data only if it doesn't exist
         initializeDefaultData();
     }
 
     private void initializeDefaultData() {
-        // Create default client if it doesn't exist
         Client systemClient = createDefaultClient();
-
-        // Create default permissions if they don't exist
         List<Permission> permissions = createDefaultPermissions();
-
-        // Create default roles if they don't exist
         Role superAdminRole = createDefaultRole("SUPER_ADMIN", systemClient);
         Role clientAdminRole = createDefaultRole("CLIENT_ADMIN", systemClient);
         Role userRole = createDefaultRole("USER", systemClient);
